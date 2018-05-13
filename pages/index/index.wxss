@@ -1,0 +1,75 @@
+/**index.wxss**/
+.index-container {
+  padding-bottom: 200px;
+}
+.index-container .userinfo-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.index-container .list {
+  /* background-color: #eeeeee; */
+  padding-left: 10px;
+}
+.index-container .user-info {
+  position: relative;
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.index-container .time {
+  font-size: 12px;
+  position: absolute;
+  top: 40px;
+  left: 70px;
+  
+}
+.index-container .name {
+  position: absolute;
+  top: 16px;
+  left: 70px;
+}
+.index-container .user-info .desc {
+  margin: 10px 10px 0 10px;
+}
+.index-container .kind {
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: red;
+  position: absolute;
+  right: 5px;
+  top: 20px;
+}
+.index-container .talk {
+  float: right;
+  margin-top: 10px;
+  position: relative;
+  left: -30px;
+}
+.index-container .good {
+  float: right;
+   margin-top: 10px;
+   position: relative;
+   left: -10px;
+}
+.clearfix:after {
+   content:""; 
+   display: block; 
+   clear:both; 
+}
+.index-container .talk-total {
+  margin-top: 30px;
+}
+.index-container .per-talk {
+  font-size: 12px;
+  margin-top: 10px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content:flex-start;
+}
+.index-container .talk-user {
+  color: #000099;
+}

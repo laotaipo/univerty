@@ -1,0 +1,11 @@
+<!--pages/my/my.wxml-->
+<view class='my-container'>
+  <image bindtap="bindViewTap" class="my-head-sculpturer" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <view class='user-name'>杨哈哈</view>
+  <view class='school'>东北林业大学</view>
+  <view class='my-int'>我喜欢花花草草</view>
+  <view>我发布的</view>
+  <view>我点赞的</view>
+  <view>我评论的</view>
+  <view>我要发布</view>
+</view>

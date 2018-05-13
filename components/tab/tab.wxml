@@ -1,0 +1,9 @@
+<!--components/tab/tab.wxml-->
+<view class='banner'>
+  <view bindtap="toast" class='tab'>我的</view> 
+  <view bindtap="toast" class='tab'>精选</view> 
+  <view bindtap="toast" class='tab'>漂流瓶</view>
+  <view bindtap="toast" class='tab'>树洞</view>
+  <!-- <view class='tab'>八卦</view> -->
+  <view bindtap="toast" class='tab'>更多</view>
+</view>

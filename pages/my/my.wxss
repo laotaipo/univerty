@@ -1,0 +1,10 @@
+/* pages/my/my.wxss */
+.my-container {
+  width: 100%;
+}
+.my-container .my-head-sculpturer {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
