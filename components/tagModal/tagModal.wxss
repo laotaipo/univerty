@@ -1,0 +1,50 @@
+/* components/tagModal/tagModal.wxss */
+.tag-modal {
+  width: 100%;
+  height: 80%;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+}
+.tag-modal-mask {
+  width: 100%;
+  height: 80%;
+  position: fixed;
+  bottom: 0;
+  background-color: #000000;
+  opacity: .4;  
+  z-index: 10;
+}
+.tag-modal .container {
+  width: 80%;
+  height: 80%;
+  background-color: #eeeeee;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.tag-modal .title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+}
+.tag-modal .default {
+  position: absolute;
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  left: 20px;
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+}
+.default1 {
+  top: 40px;
+}
+.default2 {
+  top: 80px;
+}
+.default3 {
+  top: 120px;
+}

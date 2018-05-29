@@ -6,6 +6,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    isShowPubTag: false,  //是否展示发布选项
+    time: '2017-09-01 20:00:00'
   },
   //事件处理函数
   bindViewTap: function () {
@@ -47,6 +49,16 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  setSchool: function() {
+    this.setData({
+    })
+  },
+  showPubTag: function() {
+    console.log(9999)
+    this.setData({
+      isShowPubTag: !this.data.isShowPubTag
     })
   }
 })

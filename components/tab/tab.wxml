@@ -1,9 +1,39 @@
 <!--components/tab/tab.wxml-->
 <view class='banner'>
-  <view bindtap="toast" class='tab'>我的</view> 
-  <view bindtap="toast" class='tab'>精选</view> 
-  <view bindtap="toast" class='tab'>漂流瓶</view>
-  <view bindtap="toast" class='tab'>树洞</view>
-  <!-- <view class='tab'>八卦</view> -->
-  <view bindtap="toast" class='tab'>更多</view>
+  <view bindtap="toast" class='tab tab1'>
+    <image src="../../assets/imgs/person-0.png" class='img'></image>
+    <!-- <image src="../../assets/imgs/person-1.png"></image> -->
+    <text class='info info1'>我的</text>
+  </view> 
+  <view bindtap="toast" class='tab tab2'>
+    <image src="../../assets/imgs/zuixin-0.png" class='img'></image>
+    <!-- <image src="../../assets/imgs/zuixin-1.png" class='img'></image> -->
+    <text class='info info2'>最新</text>
+  </view> 
+  <view bindtap="toast" class='tab tab3'>
+    <image src="../../assets/imgs/tuijian-0.png" class='img'></image>
+    <!-- <image src="../../assets/imgs/tuijian-1.png" class='img'></image> -->
+    <text class='info info3'>推荐</text>
+  </view> 
+  <view bindtap="toast" class='tab tab4'>
+    <image src="../../assets/imgs/search-0.png" class='img'></image>
+    <!-- <image src="../../assets/imgs//search-1.png" class='img'></image> -->
+    <text class='info info4'>搜索</text>
+  </view> 
+  <view bindtap="toast" class='tab tab5'>
+    <image src="../../assets/imgs/fire-0.png" class='img'></image>
+    <!-- <image src="../../assets/imgs/fire-1.png" class='img'></image> -->
+    <text class='info info5'>热门</text>
+  </view> 
+  <view bindtap="showMore" class='tab tab6'>
+    <image src="../../assets/imgs/more.png" class='img'></image>
+    <!-- <image src="../../assets/imgs/zuixin-1.png" class='img'></image> -->
+    <text class='info info6'>更多</text>
+  </view> 
+  <view class="more-tab {{show ? 'show-tab' : ''}}">
+    <view class='sub-tab'>漂流瓶</view>
+    <view class='sub-tab'>树洞</view>
+    <view class='sub-tab'>买卖</view>
+    <view class='sub-tab'>失物招领</view>
+  </view>
 </view>

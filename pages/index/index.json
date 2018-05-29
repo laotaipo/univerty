@@ -1,5 +1,9 @@
 {
   "usingComponents": {
     "tab": "/components/tab/tab"
-  }
+  },
+  "navigationBarTitleText": "最新消息",
+  "backgroundColor": " #ff2832",
+  "navigationBarBackgroundColor": "#e23d0e"
 }
+  

@@ -11,7 +11,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    show: false
   },
 
   /**
@@ -22,6 +22,12 @@ Component({
       wx.navigateTo({
         url: '../../pages/my/my'
       })
+    },
+    showMore: function() {
+      this.setData({
+        show: !this.data.show
+      })
+      console.log(this.data.show)
     }
   }
 })

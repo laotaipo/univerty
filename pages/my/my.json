@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents": {
+  },
+  "navigationBarTitleText": "微校",
+  "backgroundColor": " #e23d0e",
+  "navigationBarBackgroundColor": "#e23d0e"
+}

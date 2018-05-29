@@ -1,6 +1,18 @@
 //index.js
 //获取应用实例
 const app = getApp()
+// wx.request({
+//   url: 'http://localhost:3000/string',
+//   data: {
+    
+//   },
+//   header: {
+//     'Content-Type': 'application/json'
+//   },
+//   success: function(res) {
+//     console.log(res.data)
+//   }
+// })
 Page({
   data: {
     motto: 'Hello World',

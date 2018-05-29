@@ -1,0 +1,36 @@
+<!--components/tagModal/tagModal.wxml-->
+<view class='tag-modal'>
+<view class='tag-modal-mask'>
+   <!-- <picker bindchange='' value='schooldata' range=''></picker> -->
+  <view class='container'>
+    <text class='title'>请选择学校</text>
+    <view>
+      <view class='default default1'>
+        {{schooldata.total[0].provinceName}}
+      </view>
+      <!-- <view wx:for="{{schooldata.total}}"  wx:for-item="item">
+      {{item.provinceName}}
+      </view> -->
+    </view>
+    <view class='default default2'>
+      {{schooldata.total[0].city[0].cityName}}
+    </view>
+    <!-- <view wx:for="{{schooldata.total[0].city}}"  wx:for-item="city">
+      {{city.cityName}}
+    </view> -->
+    <view class='default default3'>
+      {{schooldata.total[0].city[0].univerty[0].schoolName}}
+    </view>
+    <!-- <view wx:for="{{schooldata.total[0].city[0].univerty}}"  wx:for-item="univerty">
+      {{univerty.schoolName}}
+    </view> -->
+
+    <text>确认</text>
+    <text>取消</text>
+  </view>
+</view>
+ 
+  
+</view>
+
+
