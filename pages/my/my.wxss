@@ -58,8 +58,8 @@
   text-align: center;
   line-height: 70px;
   border-radius: 50%;
-  background-color: #ff2832;
-  box-shadow: 0 0 20px #ff2832;
+  background-color: #e23d0e;
+  box-shadow: 0 0 20px #e23d0e;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -120,4 +120,31 @@
 }
 .my-container .container {
   border-top: 10px solid #eeeeee;
+}
+.picker-view {
+  font-size: 14px;
+  color: #333333;
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+  transition: bottom .5s ease;
+}
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+.picker-view-hou {
+  position: fixed;
+  bottom: -45vh;
+  transition: bottom .5s ease;
 }

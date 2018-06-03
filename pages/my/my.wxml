@@ -4,9 +4,30 @@
     <image bindtap="bindViewTap" class="my-head-sculpturer" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <view class='user-name'>{{userInfo.nickName}}</view>
     <text class='school'>东北林业大学</text>
-    <picker bindchange='bindPickerTime' mode='time' start="00:11" end="23:11" value='{{time}}'>
-      <text class='set-btn'>校园管理</text>
-    </picker>
+    <text class='set-btn' bindtap='setSchool'>校园管理</text>
+    <view class="picker-view {{addressMenuIsShow ? '' : 'picker-view-hou'}}">
+      <view style="height:10% ;width:95%;margin-top:10rpx; border-bottom: 1px solid #eeeeee">
+        <text catchtap="cityCancel">取消</text>
+        <text style="float: right; color: #ff2832" catchtap="citySure">确定</text>
+      </view>
+      <picker-view  style="width: 100%; height: 40vh;" bindchange="cityChange" value="{{value}}" wx:key="">
+        <picker-view-column>
+          <view wx:for="{{provinces}}" class="picker-item">
+            {{item.name}}
+          </view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{citys}}" class="picker-item" wx:key="">
+            {{item.name}}
+          </view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{universities}}" class="picker-item" wx:key="">
+            {{item.name}}
+          </view>
+        </picker-view-column>
+    </picker-view>
+  </view>
   </view>
   <view class='container'>
     <view class='my-choice fabu'>
@@ -30,10 +51,10 @@
     <view class="yaofa {{isShowPubTag ? 'yaofa-hou' : ''}}" bindtap="showPubTag">
     +
     </view>
-    <view class="kind {{isShowPubTag ? 'kind1' : 'kind-all'}}">漂流瓶</view>
-    <view class="kind {{isShowPubTag ? 'kind2' : 'kind-all'}}">树洞</view>
-    <view class="kind {{isShowPubTag ? 'kind3' : 'kind-all'}}">买卖</view>
-    <view class="kind {{isShowPubTag ? 'kind4' : 'kind-all'}}">失物招领</view>
-    <view class="kind {{isShowPubTag ? 'kind5' : 'kind-all'}}">其他</view>
+    <view data-tag="0" bindtap='pub' class="kind {{isShowPubTag ? 'kind1' : 'kind-all'}}">漂流瓶</view>
+    <view data-tag="1" bindtap='pub' class="kind {{isShowPubTag ? 'kind2' : 'kind-all'}}">树洞</view>
+    <view data-tag="2"  bindtap='pub' class="kind {{isShowPubTag ? 'kind3' : 'kind-all'}}">买卖</view>
+    <view data-tag="3" bindtap='pub' class="kind {{isShowPubTag ? 'kind4' : 'kind-all'}}">失物招领</view>
+    <view data-tag="4" bindtap='pub' class="kind {{isShowPubTag ? 'kind5' : 'kind-all'}}">其他</view>
   </view>
 </view>

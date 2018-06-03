@@ -1,0 +1,14 @@
+<!--pages/pub/pub.wxml-->
+<view class='pub-container'>
+  <input class='title' type='text' bindinput ="titleInput" placeholder='请输入标题'>
+  </input>
+  <textarea class="text" type='text' bindinput ="textTextarea" placeholder='请输入内容'>
+  </textarea>
+  <view class="pub-img" bindtap="pubImg">
+选择照片
+  </view>
+  <view class='sel-imgs'>
+    <image class="per-img" wx:for="{{tempFilePaths}}" wx:for-item="item" wx:key="id" src='{{item}}'></image>
+  </view>
+  <view class='btn' bindtap='pub'>发布</view>
+</view>

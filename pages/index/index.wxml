@@ -1,6 +1,10 @@
 <!--index.wxml-->
 <view class="index-container">
-  <tab></tab>
+  <tab class="tab"></tab>
+  <view class='seatch-input'>
+  <!-- <input class='title' type='text' bindinput ="titleInput" placeholder='请输入搜索内容'>
+  </input> -->
+  </view>
   <!-- <view class="userinfo"> -->
     <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
     <!-- <block wx:else> -->
@@ -12,25 +16,31 @@
     <text class="user-motto">{{motto}}</text>
   </view> -->
   <view class='list'>
-    <view wx:for="{{dong}}" wx:for-item="item" wx:key="id">
+    <view wx:for="{{newsList}}" wx:for-item="item" wx:key="id">
       <view class='user-info clearfix'>
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-        <view class='time'>{{item.time}}</view>
-        <view class='name'>{{item.user}}</view>
-        <view class='kind'>树洞</view>
-        <view class='desc'>
-          {{item.content}}
+        <!-- <view class='time'>{{item.time}}</view> -->
+        <view class='name'>{{item.name}}</view>
+        <view class='kind'>{{item.tag}}</view>
+        <view class='one-img-container'>
+          <image class='one-img' src='{{item.tempFilePaths[0]}}'></image>
         </view>
-        <view class='good'>赞（{{item.talk.good}}）</view>
+        <view class='title'>
+          {{item.title}}
+        </view>
+        <view class='desc'>
+          {{item.text}}
+        </view>
+        <view class='good'>赞（8）</view>
         <view class='talk'>评论</view>
         <view class='talk-total'>
          <view class='talk-list' wx:for="{{item.talk.words}}"  wx:for-item="words" wx:key="id">
           <view class='per-talk'>
             <view class='talk-user'>
-              {{words.user}}：
+              <!-- {{words.user}}： -->
             </view>
             <view class='talk-desc'>
-              {{words.desc}}
+              <!-- {{words.desc}} -->
             </view>
           </view>
         </view>

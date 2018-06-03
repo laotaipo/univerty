@@ -1,0 +1,30 @@
+/* pages/pub/pub.wxss */
+.pub-container {
+  padding: 0 10px;
+}
+.pub-container .text {
+  border-bottom: 1px solide #eeeeee;
+}
+.pub-container .title {
+  margin-bottom: 20px;  
+}
+.pub-container .pub-img {
+  font-size: 16px;
+  color: #333333;
+}
+.pub-container .sel-imgs .per-img {
+  width: 30%;
+  height: 150px;
+  margin-right: 1%;
+}
+.pub-container .btn {
+  color: #ffffff;  
+  margin: 0 auto;
+  margin-top: 300px;
+  border-radius: 10px;
+  background-color: #e23d0e;
+  width: 60%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
