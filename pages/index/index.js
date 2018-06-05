@@ -145,5 +145,11 @@ Page({
         console.log(res.data)
       }
     })
+  },
+  goDetail: function(e) {
+    let id = e.currentTarget.dataset.newsid
+    wx.navigateTo({
+      url: `../../pages/detail/detail?id=${id}`,
+    })
   }
 })

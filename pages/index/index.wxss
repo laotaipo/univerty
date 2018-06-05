@@ -43,7 +43,7 @@
   color: #333333;
   position: absolute;
   left: 120px;
-  top: -130px;
+  top: -125px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
@@ -54,7 +54,7 @@
   color: #333333;
   position: absolute;
   left: 120px;
-  top: -100px;
+  top: -90px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -75,7 +75,7 @@
   font-size: 14px;
   color: #333333;
   position: absolute;
-  left: 160px;
+  left: 240px;
   top: -30px;
 }
 .index-container .good {
@@ -83,7 +83,7 @@
   color: #333333;
   position: absolute;
   top: -30px;
-  left: 230px;
+  left: 190px;
 }
 .clearfix:after {
    content:""; 
@@ -96,6 +96,13 @@
   display: flex;
   display: -webkit-flex;
   justify-content:flex-start;
+}
+.index-container .go-detail {
+  font-size: 14px;
+  color: #333333;
+  position: absolute;
+  top: -30px;
+  right: 10px;
 }
 .index-container .talk-user {
   color: #000099;
