@@ -8,9 +8,10 @@
     <view class='text'> </view>
     <view class='imgs'></view>
     <view class='hudong'>
-       <view class='good' bindtap='doGood' wx:if="!{{good}}">点赞</view> 
+       <view class='good' bindtap='doGood' wx:if="{{!good}}">点赞</view> 
       <view class='good' bindtap='doGood' wx:if="{{good}}">已点赞</view>
-      <view class='cang' bindtap='doLike'>收藏</view>
+      <view class='cang' bindtap='doLike' wx:if="{{!cang}}">收藏</view>
+      <view class='cang' bindtap='doLike' wx:if="{{cang}}">已收藏</view>
     </view>
   </view>
   <view class='ping-box'>

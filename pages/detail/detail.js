@@ -12,7 +12,8 @@ Page({
     id: '',
     discussList: [],
     newsDetail: {},
-    good: false
+    good: false,
+    cang: false
     
   },
 
@@ -149,7 +150,6 @@ Page({
     })
   },
   doGood: function() {
-    console.log(999)
     this.setData({
       good: !this.data.good
     })
@@ -161,6 +161,32 @@ Page({
     data.good = this.data.good ? true : false
     wx.request({
       url: 'http://localhost:3000/users/good',
+      method: 'post',
+      header: {
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      data: data,
+      // method: 'POST',18697066652
+      success: function (res) {
+        // console.log('00000000')
+        // that.setData({
+        //   newsList: res.data
+        // })
+        // console.log(res.data)
+      }
+    })
+  },
+  doLike: function() {
+    this.setData({
+      cang: !this.data.cang
+    })
+    let data = {
+    }
+    data.openid = this.data.openid
+    data.id = this.data.id
+    data.cang = this.data.cang ? true : false
+    wx.request({
+      url: 'http://localhost:3000/users/cang',
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"

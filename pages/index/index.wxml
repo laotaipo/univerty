@@ -32,7 +32,7 @@
           {{item.text}}
         </view>
         <view class='good'>{{item.goodNum}}赞</view>
-        <view class='talk'>评</view>
+        <view class='talk'>{{item.cangNum}}评</view>
         <view class='go-detail' bindtap="goDetail" data-newsid="{{item._id}}">详情></view>
         <view class='talk-total'>
          <view class='talk-list' wx:for="{{item.talk.words}}"  wx:for-item="words" wx:key="id">
