@@ -55,6 +55,7 @@
     <view data-tag="1" bindtap='pub' class="kind {{isShowPubTag ? 'kind2' : 'kind-all'}}">树洞</view>
     <view data-tag="2"  bindtap='pub' class="kind {{isShowPubTag ? 'kind3' : 'kind-all'}}">买卖</view>
     <view data-tag="3" bindtap='pub' class="kind {{isShowPubTag ? 'kind4' : 'kind-all'}}">失物招领</view>
-    <view data-tag="4" bindtap='pub' class="kind {{isShowPubTag ? 'kind5' : 'kind-all'}}">其他</view>
+    <view data-tag="4" bindtap='pub' class="kind {{isShowPubTag ? 'kind5' : 'kind-all'}}">匿名</view>
+    <view data-tag="5" bindtap='pub' class="kind {{isShowPubTag ? 'kind5' : 'kind-all'}}">其他</view>
   </view>
 </view>

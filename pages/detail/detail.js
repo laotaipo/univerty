@@ -58,7 +58,8 @@ Page({
               that.setData({
                 discussList: res.data.discussList,
                 newsDetail: res.data.newsDetail,
-                good: res.data.havegood
+                good: res.data.havegood,
+                cang: res.data.havecang
               })
               console.log(res.data)
             }

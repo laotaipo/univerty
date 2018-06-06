@@ -1,0 +1,113 @@
+/**index.wxss**/
+.sort-container {
+  padding-bottom: 200px;
+}
+.sort-container .userinfo-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.sort-container .list {
+  /* background-color: #eeeeee; */
+  padding-left: 10px;
+}
+.sort-container .user-info {
+  position: relative;
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.sort-container .time {
+  font-size: 12px;
+  position: absolute;
+  top: 40px;
+  left: 70px;
+  
+}
+.sort-container .name {
+  position: absolute;
+  top: 16px;
+  left: 70px;
+}
+.sort-container .one-img-container {
+  width: 100px;
+  height: 120px;
+  overflow: hidden;
+  background: red;
+}
+.sort-container .one-img {
+  width: 100px;
+}
+.sort-container .user-info .title {
+  font-weight: 600;
+  color: #333333;
+  position: absolute;
+  left: 120px;
+  top: -125px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.sort-container .user-info .desc {
+  font-size: 15px;
+  color: #333333;
+  position: absolute;
+  left: 120px;
+  top: -90px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.sort-container .kind {
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: red;
+  position: absolute;
+  right: 5px;
+  top: 20px;
+}
+.sort-container .talk {
+  font-size: 14px;
+  color: #333333;
+  position: absolute;
+  left: 240px;
+  top: -30px;
+}
+.sort-container .good {
+  font-size: 14px;
+  color: #333333;
+  position: absolute;
+  top: -30px;
+  left: 190px;
+}
+.clearfix:after {
+   content:""; 
+   display: block; 
+   clear:both; 
+}
+.sort-container .per-talk {
+  font-size: 12px;
+  margin-top: 10px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content:flex-start;
+}
+.sort-container .go-detail {
+  font-size: 14px;
+  color: #333333;
+  position: absolute;
+  top: -30px;
+  right: 10px;
+}
+.sort-container .talk-user {
+  color: #000099;
+}
+.sort-container .tab {
+  /* position: relative;
+  z-index: 11; */
+  } 

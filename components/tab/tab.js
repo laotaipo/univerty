@@ -28,6 +28,12 @@ Component({
         show: !this.data.show
       })
       console.log(this.data.show)
+    },
+    find: function(e) {
+      let tag = e.currentTarget.dataset.tag
+      wx.navigateTo({
+        url: `../../pages/sort/sort?tag=${tag}`
+      })      
     }
   }
 })

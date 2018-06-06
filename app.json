@@ -6,7 +6,8 @@
     "pages/my/my",
     "pages/set/set",
     "pages/pub/pub",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/sort/sort"
   ],
   "window": {
     "backgroundTextStyle": "light",

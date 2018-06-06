@@ -138,8 +138,18 @@ Page({
       text: this.data.text,
       tempFilePaths: this.data.tempFilePaths
     };
+    this.data.tempFilePaths.map((item) => {
+      wx.uploadFile({
+        url: 'https://yangmj.applinzi.com/pubImg',
+        filePath: item,
+        name: '',
+        success: function (res) {
+          console.log(111)
+        }
+      })
+    })
     wx.request({
-      url: 'http://localhost:3000/users/pub',
+      url: 'https://yangmj.applinzi.com/pubImg/users/pub',
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"

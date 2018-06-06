@@ -1,20 +1,6 @@
 <!--index.wxml-->
-<view class="index-container">
+<view class="sort-container">
   <tab class="tab"></tab>
-  <!-- <view class='seatch-input'>
-   <input class='title' type='text' bindinput ="titleInput" placeholder='请输入搜索内容'>
-  </input> 
-  </view> -->
-  <!-- <view class="userinfo"> -->
-    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
-    <!-- <block wx:else> -->
-      <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> -->
-      <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
-    <!-- </block> -->
-  <!-- </view> -->
-  <!-- <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
   <view class='list'>
     <view wx:for="{{newsList}}" wx:for-item="item" wx:key="id">
       <view class='user-info clearfix'>

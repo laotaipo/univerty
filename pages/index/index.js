@@ -104,7 +104,7 @@ Page({
       openid: openid
     }
     wx.request({
-      url: 'http://localhost:3000/users/',
+      url: 'https://yangmj.applinzi.com/users/',
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"
@@ -127,10 +127,11 @@ Page({
   getNews: function(no) {
     let that = this;
     let data = {
-      schoolNo: no
+      schoolNo: no,
+      tag: -1
     }
     wx.request({
-      url: 'http://localhost:3000/users/news',
+      url: 'https://yangmj.applinzi.com/users/news',
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"

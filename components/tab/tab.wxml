@@ -31,9 +31,12 @@
     <text class='info info6'>更多</text>
   </view> 
   <view class="more-tab {{show ? 'show-tab' : ''}}">
-    <view class='sub-tab'>漂流瓶</view>
-    <view class='sub-tab'>树洞</view>
-    <view class='sub-tab'>买卖</view>
-    <view class='sub-tab'>失物招领</view>
+  <view data-tag="5" bindtap='pub' class="kind {{isShowPubTag ? 'kind5' : 'kind-all'}}">其他</view>
+    <view class='sub-tab' data-tag="0" bindtap='find'>漂流瓶</view>
+    <view class='sub-tab' data-tag="1" bindtap='find'>树洞</view>
+    <view class='sub-tab' data-tag="2" bindtap='find'>买卖</view>
+    <view class='sub-tab' data-tag="3" bindtap='find'>失物招领</view>
+    <view class='sub-tab' data-tag="4" bindtap='find'>匿名</view>
+    <view class='sub-tab' data-tag="5" bindtap='find'>其他</view>
   </view>
 </view>
