@@ -34,6 +34,18 @@ Component({
       wx.navigateTo({
         url: `../../pages/sort/sort?tag=${tag}`
       })      
+    },
+    goSort: function(e) {
+      let tag = e.currentTarget.dataset.tag
+      wx.navigateTo({
+        url: `../../pages/sort/sort?tag=${tag}`
+      })     
+    },
+    goNew: function(e) {
+      let tag = e.currentTarget.dataset.tag
+      wx.navigateTo({
+        url: '../../pages/index/index'
+      })     
     }
   }
 })

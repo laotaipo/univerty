@@ -5,22 +5,22 @@
     <!-- <image src="../../assets/imgs/person-1.png"></image> -->
     <text class='info info1'>我的</text>
   </view> 
-  <view bindtap="toast" class='tab tab2'>
+  <view bindtap="goNew" data-tag="-1" class='tab tab2'>
     <image src="../../assets/imgs/zuixin-0.png" class='img'></image>
     <!-- <image src="../../assets/imgs/zuixin-1.png" class='img'></image> -->
     <text class='info info2'>最新</text>
   </view> 
-  <view bindtap="toast" class='tab tab3'>
+  <view bindtap="goSort" data-tag="7" class='tab tab3'>
     <image src="../../assets/imgs/tuijian-0.png" class='img'></image>
     <!-- <image src="../../assets/imgs/tuijian-1.png" class='img'></image> -->
     <text class='info info3'>推荐</text>
   </view> 
-  <view bindtap="toast" class='tab tab4'>
+  <view bindtap="goSort" data-tag="6" class='tab tab4'>
     <image src="../../assets/imgs/search-0.png" class='img'></image>
     <!-- <image src="../../assets/imgs//search-1.png" class='img'></image> -->
     <text class='info info4'>搜索</text>
   </view> 
-  <view bindtap="toast" class='tab tab5'>
+  <view bindtap="goSort" data-tag="8" class='tab tab5'>
     <image src="../../assets/imgs/fire-0.png" class='img'></image>
     <!-- <image src="../../assets/imgs/fire-1.png" class='img'></image> -->
     <text class='info info5'>热门</text>

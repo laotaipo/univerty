@@ -1,5 +1,7 @@
 // pages/my/my.js
 const app = getApp()
+let HOST = require('../../config/config.js').HOST
+HOST = 'localhost'
 let address = require('./schoolData.js')
 console.log(address)
 Page({
@@ -20,7 +22,8 @@ Page({
     universityName: '',
     universityId: '',
     openid: '',
-    userName: ''
+    userName: '',
+    myNews: {}
   },
   //事件处理函数
   bindViewTap: function () {
@@ -35,7 +38,8 @@ Page({
       key: 'userInfo',
       success: function (res) {
         that.setData({
-          userName: res.data.nickName
+          userName: res.data.nickName,
+          userInfo: res.data
         })
         console.log('===', res, that.data.userName)
       },
@@ -86,7 +90,7 @@ Page({
       schoolNo: this.data.universityId
     }
     wx.request({
-      url: 'http://localhost:3000/users/login',
+      url: `http://{HOST}:3000/users/login`,
       data: data,
       method: 'post',
       header: {

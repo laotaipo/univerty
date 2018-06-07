@@ -1,6 +1,10 @@
 
 const app = getApp()
 let prom = require('../../utils/prom.js')
+let util = require('../../utils/util.js')
+let HOST = require('../../config/config.js').HOST
+HOST = 'localhost'
+console.log(HOST)
 let code, openid, APPID = 'wx1cfc36401256962f', SECRET = '4fa41c4bde9697c0b95531ac12ac2b92'
 Page({
   data: {
@@ -63,6 +67,9 @@ Page({
   //     hasUserInfo: true
   //   })
   // },
+  onShow: function() {
+    this.onLoad()
+  },
   getOpenid: function() {
     console.log(66)
     let that = this    
@@ -104,7 +111,7 @@ Page({
       openid: openid
     }
     wx.request({
-      url: 'https://yangmj.applinzi.com/users/',
+      url: `http://${HOST}:3000/users/`,
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"
@@ -131,7 +138,7 @@ Page({
       tag: -1
     }
     wx.request({
-      url: 'https://yangmj.applinzi.com/users/news',
+      url: `http://${HOST}:3000/users/news`,
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"
@@ -140,6 +147,9 @@ Page({
       // method: 'POST',
       success: function (res) {
         console.log('00000000')
+        res.data.map((item)=> {
+          item.createTime = util.formatTime(new Date(item.createTime))
+        })
         that.setData({
           newsList: res.data
         })

@@ -1,5 +1,7 @@
 // pages/pub/pub.js
 import {getCurrentPageUrlOptions} from "../../utils/util.js"
+let HOST = require('../../config/config.js').HOST
+HOST = 'localhost'
 Page({
 
   /**
@@ -138,18 +140,18 @@ Page({
       text: this.data.text,
       tempFilePaths: this.data.tempFilePaths
     };
-    this.data.tempFilePaths.map((item) => {
-      wx.uploadFile({
-        url: 'https://yangmj.applinzi.com/pubImg',
-        filePath: item,
-        name: '',
-        success: function (res) {
-          console.log(111)
-        }
-      })
-    })
+    // this.data.tempFilePaths.map((item) => {
+    //   wx.uploadFile({
+    //     url: 'https://yangmj.applinzi.com/pubImg',
+    //     filePath: item,
+    //     name: '',
+    //     success: function (res) {
+    //       console.log(111)
+    //     }
+    //   })
+    // })
     wx.request({
-      url: 'https://yangmj.applinzi.com/pubImg/users/pub',
+      url: `http://${HOST}:3000/users/pub`,
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"
