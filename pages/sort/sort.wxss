@@ -33,7 +33,6 @@
   width: 100px;
   height: 120px;
   overflow: hidden;
-  background: red;
 }
 .sort-container .one-img {
   width: 100px;
@@ -43,7 +42,7 @@
   color: #333333;
   position: absolute;
   left: 120px;
-  top: -125px;
+  top: 75px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
@@ -54,7 +53,7 @@
   color: #333333;
   position: absolute;
   left: 120px;
-  top: -90px;
+  top: 110px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

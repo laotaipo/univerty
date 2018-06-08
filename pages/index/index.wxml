@@ -7,7 +7,7 @@
     <view class='btn'>确认</view>
   </view> 
   <!-- <view class="userinfo"> -->
-    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
+      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>   -->
     <!-- <block wx:else> -->
       <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> -->
       <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
@@ -17,14 +17,14 @@
     <text class="user-motto">{{motto}}</text>
   </view> -->
   <view class='list'>
-    <view wx:for="{{newsList}}" wx:for-item="item" wx:key="id">
-      <view class='user-info clearfix'>
+    <view wx:for="{{newsList}}" wx:for-item="item" wx:key="id2">
+      <view class='user-info'>
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
         <view class='time'>{{item.createTime}}</view>  
         <view class='name'>{{item.name}}</view>
         <view class='kind'>{{item.tagName}}</view>
         <view class='one-img-container'>
-          <image class='one-img' src='{{item.tempFilePaths[0]}}'></image>
+          <image class='one-img' mode="widthFix" src='{{item.tempFilePaths}}'></image>
         </view>
         <view class='title'>
           {{item.title}}

@@ -3,10 +3,12 @@
     <image class='sculpture' src='{{userInfo.avatarUrl}}'></image>
     <view class='name'>{{userInfo.nickName}}</view>
     <view class='time'>iiiiii</view>
-    <view class='tag'>iiii</view>
-    <view class='title'></view>
-    <view class='text'> </view>
-    <view class='imgs'></view>
+    <view class='tag'>{{newsDetail.tagName}}</view>
+    <view class='title'>{{newsDetail.title}}</view>
+    <view class='text'>{{newsDetail.text}}</view>
+    <view class='imgs'>
+      <image src='{{newsDetail.tempFilePaths}}'></image>
+    </view>
     <view class='hudong'>
        <view class='good' bindtap='doGood' wx:if="{{!good}}">点赞</view> 
       <view class='good' bindtap='doGood' wx:if="{{good}}">已点赞</view>

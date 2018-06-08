@@ -19,6 +19,14 @@ Page({
     let schoolNo = ''
     let tag = getCurrentPageUrlOptions().tag
     wx.getStorage({
+      key: 'userInfo',
+      success: function(res) {
+        that.setData({
+          userInfo: res.data
+        })
+      },
+    })
+    wx.getStorage({
       key: 'userXiao',
       success: function(res) {
         schoolNo = res.data.schoolNo

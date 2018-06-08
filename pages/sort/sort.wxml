@@ -9,7 +9,7 @@
         <view class='name'>{{item.name}}</view>
         <view class='kind'>{{item.tagName}}</view>
         <view class='one-img-container'>
-          <image class='one-img' src='{{item.tempFilePaths[0]}}'></image>
+          <image class='one-img'  mode="widthFix" src='{{item.tempFilePaths}}'></image>
         </view>
         <view class='title'>
           {{item.title}}

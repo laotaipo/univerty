@@ -9,6 +9,7 @@ Page({
    */
   data: {
     tempFilePaths: [],
+    fileUrls:[],
     title: '',
     text: '',
     userName: '',
@@ -129,48 +130,89 @@ Page({
       text: e.detail.value
     })
   },
-  pub: function() {
-    let data = {
-      openid: this.data.openid,
-      userName: this.data.userName,
-      headSculpture: this.data.headSculpture,      
-      tag: this.data.tag,
-      schoolNo: this.data.schoolNo,
-      title: this.data.title,
-      text: this.data.text,
-      tempFilePaths: this.data.tempFilePaths
-    };
-    // this.data.tempFilePaths.map((item) => {
-    //   wx.uploadFile({
-    //     url: 'https://yangmj.applinzi.com/pubImg',
-    //     filePath: item,
-    //     name: '',
-    //     success: function (res) {
-    //       console.log(111)
-    //     }
-    //   })
-    // })
-    wx.request({
-      url: `http://${HOST}:3000/users/pub`,
-      method: 'post',
+  uppic1: function (index) {
+    var that = this;
+    var data = []
+    console.log("上传图片1" + that.data.tempFilePaths[index]);
+    wx.uploadFile({
+      url: 'http://47.94.254.11'+'/upload/uploadPic.do',      //此处换上你的接口地址  
+      filePath: that.data.tempFilePaths[index],
+      name: 'pic',
       header: {
-        'Content-Type': "application/x-www-form-urlencoded"
+        "Content-Type": "multipart/form-data",
+        'accept': 'application/json'
       },
-      data: data,
-      // method: 'POST',
       success: function (res) {
-        console.log(9999)
+        data.push(res.data);
+        if(index == 1){
+          that.setData({
+            fileUrls: data
+          })
+        }else{
+          if (that.data.tempFilePaths.length == 1){
+            that.setData({
+              fileUrls: data
+            })
+          }else
+          uppic1(1);
+        }
+        console.log("上传返回信息" + data);
+      },
+      fail: function (res) {
+        console.log('fail');
         wx.showToast({
-          title: '成功',
-          icon: 'succes',
-          duration: 1000,
-          mask: true
+          title: '上传失败，·',
         })
-        wx.navigateTo({
-          url: '../../pages/index/index'
-        })
-      }
+
+      },
     })
-    console.log('====================', data)
+
+  },
+
+  pub: function() {
+    this.uppic1(0);
+    setTimeout(() => {
+      let data = {
+        openid: this.data.openid,
+        userName: this.data.userName,
+        headSculpture: this.data.headSculpture,
+        tag: this.data.tag,
+        schoolNo: this.data.schoolNo,
+        title: this.data.title,
+        text: this.data.text,
+        tempFilePaths: this.data.fileUrls
+      };
+      // this.data.tempFilePaths.map((item) => {
+      //   wx.uploadFile({
+      //     url: 'https://yangmj.applinzi.com/pubImg',
+      //     filePath: item,
+      //     name: '',
+      //     success: function (res) {
+      //       console.log(111)
+      //     }
+      //   })
+      // })
+      wx.request({
+        url: `http://${HOST}:3000/users/pub`,
+        method: 'post',
+        header: {
+          'Content-Type': "application/x-www-form-urlencoded"
+        },
+        data: data,
+        // method: 'POST',
+        success: function (res) {
+          console.log(9999)
+          wx.showToast({
+            title: '成功',
+            icon: 'succes',
+            duration: 1000,
+            mask: true
+          })
+          wx.navigateTo({
+            url: '../../pages/index/index'
+          })
+        }
+      })
+    }, 3000)
   }
 })

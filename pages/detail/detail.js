@@ -1,5 +1,7 @@
 // pages/detail/detail.js
 import { getCurrentPageUrlOptions } from "../../utils/util.js"
+let HOST = require('../../config/config.js').HOST
+HOST = 'localhost'
 Page({
 
   /**
@@ -23,6 +25,7 @@ Page({
   onLoad: function (options) {
       let that = this
       let id = getCurrentPageUrlOptions().id
+      console.log("===", typeof(id))
       this.setData({
         id: id
       })
@@ -47,7 +50,7 @@ Page({
             openid: res.data
           }
           wx.request({
-            url: 'http://localhost:3000/users/newsDetail',
+            url: `http://${HOST}:3000/users/newsDetail`,
             method: 'post',
             header: {
               'Content-Type': "application/x-www-form-urlencoded"
@@ -57,7 +60,7 @@ Page({
             success: function (res) {
               that.setData({
                 discussList: res.data.discussList,
-                newsDetail: res.data.newsDetail,
+                newsDetail: res.data.newsDetail[0],
                 good: res.data.havegood,
                 cang: res.data.havecang
               })

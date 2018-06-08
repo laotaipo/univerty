@@ -31,7 +31,7 @@ Page({
         key: 'userInfo',
         data: app.globalData.userInfo
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       app.userInfoReadyCallback = res => {
         console.log('===', res)
         this.setData({
@@ -59,14 +59,57 @@ Page({
       })
     }
   },
-  // getUserInfo: function(e) {
-  //   console.log(e)
-  //   app.globalData.userInfo = e.detail.userInfo
-  //   this.setData({
-  //     userInfo: e.detail.userInfo,
-  //     hasUserInfo: true
-  //   })
-  // },
+  getUserInfo: function(e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+  validateAuthorize: function (scopeType, fun) {
+    var _this = this;
+    wx.getSetting({
+      success: result => {
+        if (result.authSetting['scope.' + scopeType]) {
+          _this.globalData.authType[scopeType] = true;
+          fun();
+        } else {
+          wx.authorize({
+            scope: 'scope.' + scopeType,
+            success(res) {
+              _this.globalData.authType[scopeType] = true;
+              fun();
+            },
+            fail() {
+              wx.showModal({
+                title: '提示',
+                content: '请允许授权以便为你提供更好的服务',
+                showCancel: false,
+                success: function () {
+                  wx.openSetting({
+                    success: (res) => {
+                      if (res.authSetting['scope.' + scopeType]) {
+                        _this.globalData.authType[scopeType] = true;
+                        fun();
+                      } else {
+                        _this.globalData.authType[scopeType] = false;
+                        _this.validateAuthorize(scopeType, fun);
+                      }
+                    },
+                    fail() {
+                      _this.globalData.authType[scopeType] = false;
+                      _this.validateAuthorize(scopeType, fun);
+                    }
+                  });
+                }
+              })
+            }
+          });
+        }
+      }
+    })
+  },
   onShow: function() {
     this.onLoad()
   },
