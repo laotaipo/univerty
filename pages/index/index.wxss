@@ -74,7 +74,14 @@
   font-size: 14px;
   color: #333333;
   position: absolute;
-  left: 240px;
+  left: 260px;
+  top: 160px;
+}
+.index-container .cang {
+  font-size: 14px;
+  color: #333333;
+  position: absolute;
+  left: 220px;
   top: 160px;
 }
 .index-container .good {
@@ -82,7 +89,7 @@
   color: #333333;
   position: absolute;
   top: 160px;
-  left: 190px;
+  left: 180px;
 }
 .clearfix:after {
    content:""; 

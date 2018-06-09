@@ -7,7 +7,8 @@
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{item.headSculpture}}" background-size="cover"></image>
          <view class='time'>{{item.time}}</view> 
         <view class='name'>{{item.name}}</view>
-        <view class='kind'>{{item.tagName}}</view>
+        <view class='kind' wx:if="{{tag!='9'}}">{{item.tagName}}</view>
+         <view class='del' wx:if="{{tag=='9'}}">删除</view> 
         <view class='one-img-container'>
           <image class='one-img'  mode="widthFix" src='{{item.tempFilePaths}}'></image>
         </view>

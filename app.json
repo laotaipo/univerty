@@ -7,7 +7,9 @@
     "pages/set/set",
     "pages/pub/pub",
     "pages/detail/detail",
-    "pages/sort/sort"
+    "pages/sort/sort",
+    "pages/piao/piao",
+    "pages/dong/dong"
   ],
   "window": {
     "backgroundTextStyle": "light",

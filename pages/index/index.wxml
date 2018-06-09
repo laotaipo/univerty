@@ -2,8 +2,8 @@
 <view class="index-container">
   <tab class="tab"></tab>
   <view class='search-input-show'>
-    <input class='key-words' type='text' bindinput ="keywordsInput" placeholder='请输入搜索内容'>
-    </input> 
+     <input class='key-words' type='text' bindinput ="keywordsInput" placeholder='请输入搜索内容'>
+    </input>  
     <view class='btn' bindtap='search'><image src="../../assets/imgs/search-0.png" class='search-img'></image></view>
   </view> 
   <!-- <view class="userinfo"> -->
@@ -24,7 +24,7 @@
         <view class='name'>{{item.name}}</view>
         <view class='kind'>{{item.tagName}}</view>
         <view class='one-img-container'>
-          <image class='one-img' mode="widthFix" src='{{item.tempFilePaths}}'></image>
+          <image class='one-img' mode="widthFix" src='{{item.tempFilePaths[0]}}'></image>
         </view>
         <view class='title'>
           {{item.title}}
@@ -33,6 +33,7 @@
           {{item.text}}
         </view>
         <view class='good'>{{item.goodNum}}赞</view>
+        <view class='cang'>{{item.cangNum}}藏</view>
         <view class='talk'>{{item.cangNum}}评</view>
         <view class='go-detail' bindtap="goDetail" data-newsid="{{item._id}}">详情></view>
         <view class='talk-total'>

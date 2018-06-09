@@ -1,6 +1,7 @@
 // pages/detail/detail.js
 import { getCurrentPageUrlOptions } from "../../utils/util.js"
 let HOST = require('../../config/config.js').HOST
+let util = require('../../utils/util.js')
 // HOST = 'localhost'
 Page({
 
@@ -58,9 +59,13 @@ Page({
             data: data,
             // method: 'POST',
             success: function (res) {
+              let detail = res.data.newsDetail[0]
+              detail.createTime = util.formatTime(new Date())
+              detail.tempFilePaths = res.data.newsDetail[0].tempFilePaths.split(",")
+              console.log(detail.tempFilePaths)
               that.setData({
                 discussList: res.data.discussList,
-                newsDetail: res.data.newsDetail[0],
+                newsDetail: detail,
                 good: res.data.havegood,
                 cang: res.data.havecang
               })
@@ -134,7 +139,6 @@ Page({
       otherOpenid: '',
       id: this.data.id,
       name: this.data.userInfo.nickName
-      
     }
     wx.request({
       url: `http://${HOST}:3000/users/pubDiscuss`,

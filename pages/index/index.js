@@ -197,8 +197,12 @@ Page({
         res.data.map((item)=> {
           item.createTime = util.formatTime(new Date(item.createTime))
         })
+        let arr = res.data
+        arr.map((item) => {
+          item.tempFilePaths = item.tempFilePaths.split(",")
+        })
         that.setData({
-          newsList: res.data
+          newsList: arr
         })
         console.log(res.data)
       }

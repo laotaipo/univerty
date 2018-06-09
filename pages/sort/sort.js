@@ -7,7 +7,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     dong: {},
-    newsList: []
+    newsList: [],
+    tag: ''
   },
   bindViewTap: function () {
     wx.navigateTo({
@@ -18,6 +19,9 @@ Page({
     let that = this
     let schoolNo = ''
     let tag = getCurrentPageUrlOptions().tag
+    this.setData({
+      tag: tag
+    })
     wx.getStorage({
       key: 'userInfo',
       success: function(res) {

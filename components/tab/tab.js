@@ -37,9 +37,17 @@ Component({
     },
     goSort: function(e) {
       let tag = e.currentTarget.dataset.tag
-      wx.navigateTo({
-        url: `../../pages/sort/sort?tag=${tag}`
-      })     
+      console.log(tag)
+      if(tag == "1" || tag == 1) {
+        wx.navigateTo({
+          url: `../../pages/dong/dong`
+        })  
+      } else {
+        wx.navigateTo({
+          url: `../../pages/sort/sort?tag=${tag}`
+        })   
+      }
+        
     },
     goNew: function(e) {
       let tag = e.currentTarget.dataset.tag

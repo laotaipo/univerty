@@ -163,5 +163,12 @@ Page({
     wx.navigateTo({
       url: `../../pages/pub/pub?tag=${tag}`
     })
+  },
+  find: function(e) {
+    let tag = e.currentTarget.dataset.tag
+    console.log(tag)
+    wx.navigateTo({
+      url: `../../pages/sort/sort?tag=${tag}`
+    })   
   }
 })

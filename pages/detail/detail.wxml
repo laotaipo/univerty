@@ -2,26 +2,32 @@
   <view class='head'>
     <image class='sculpture' src='{{userInfo.avatarUrl}}'></image>
     <view class='name'>{{userInfo.nickName}}</view>
-    <view class='time'>iiiiii</view>
+    <view class='time'>{{newsDetail.createTime}}</view>
     <view class='tag'>{{newsDetail.tagName}}</view>
-    <view class='title'>{{newsDetail.title}}</view>
+    <view class='title'>{{newsDetail.title}}{{newsDetail.tempFilePaths.length}}</view>
     <view class='text'>{{newsDetail.text}}</view>
-    <view class='imgs'>
-      <image src='{{newsDetail.tempFilePaths}}'></image>
+    <view class='img-container' wx:if="{{newsDetail.tempFilePaths.length>0}}">
+      <view  wx:for="{{newsDetail.tempFilePaths}}" wx:for-item="item" wx:key="id" class='per-img-container'>
+          <image src="{{item}}" class='per-img' mode="widthFix">
+          </image>
+      </view>
     </view>
+    <view class='ping-container'></view>
     <view class='hudong'>
        <view class='good' bindtap='doGood' wx:if="{{!good}}">点赞</view> 
-      <view class='good' bindtap='doGood' wx:if="{{good}}">已点赞</view>
+      <view class='good have' bindtap='doGood' wx:if="{{good}}">已点赞</view>
       <view class='cang' bindtap='doLike' wx:if="{{!cang}}">收藏</view>
-      <view class='cang' bindtap='doLike' wx:if="{{cang}}">已收藏</view>
+      <view class='cang have' bindtap='doLike' wx:if="{{cang}}">已收藏</view>
     </view>
+    <view class='ping-box'>
+      <input class='discuss-ipt' type='text' bindinput ="discussInput" placeholder='请输入评论'></input> 
+      <view class='dis-btn' bindtap='pubDiscuss'>确定</view> 
   </view>
-  <view class='ping-box'>
-    <!-- <input class='discuss-ipt' type='text' bindinput ="discussInput" placeholder='请输入评论'></input>
-    <view bindtap='pubDiscuss'>确定</view> -->
+  
     <view wx:for="{{discussList}}" wx:for-item="item" wx:key="new">
       <text>{{item.name}}: </text>
       <text>{{item.discussWords}}</text>
     </view>
-  </view>    
+  </view>
 </view>
+

@@ -30,21 +30,21 @@
   </view>
   </view>
   <view class='container'>
-    <view class='my-choice fabu'>
+    <view class='my-choice fabu' data-tag="9" bindtap='find'>
       <text>我发布的</text>
       <text class='num'>8条</text>
     </view>
-    <view class='my-choice cang'>
+    <view class='my-choice cang'  data-tag="10" bindtap='find'>
       <text>我收藏的</text>
-      <text class='num'>8条</text>
+      <text class='num'>2条</text>
     </view>
     <view class='my-choice weidu'>
       <text>我未读的</text>       
-      <text class='num'>8条</text>
+      <text class='num'>1条</text>
     </view>
     <view class='my-choice ping'>
       <text>漂流瓶</text>    
-      <text class='num'>8个</text>
+      <text class='num'>1个</text>
     </view>
   </view>
   <view class='yaofa-container'>

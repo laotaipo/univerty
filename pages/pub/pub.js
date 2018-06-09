@@ -1,6 +1,7 @@
 // pages/pub/pub.js
 import {getCurrentPageUrlOptions} from "../../utils/util.js"
 let HOST = require('../../config/config.js').HOST
+var dataimg = []
 Page({
 
   /**
@@ -129,32 +130,23 @@ Page({
       text: e.detail.value
     })
   },
-  uppic1: function (index) {
+  uppic1: function (item) {
     var that = this;
     var data = []
-    console.log("上传图片1" + that.data.tempFilePaths[index]);
     wx.uploadFile({
       url: 'http://47.94.254.11'+'/upload/uploadPic.do',      //此处换上你的接口地址  
-      filePath: that.data.tempFilePaths[index],
+      filePath: item,
       name: 'pic',
       header: {
         "Content-Type": "multipart/form-data",
         'accept': 'application/json'
       },
       success: function (res) {
-        data.push(res.data);
-        if(index == 1){
-          that.setData({
-            fileUrls: data
-          })
-        }else{
-          if (that.data.tempFilePaths.length == 1){
-            that.setData({
-              fileUrls: data
-            })
-          }else
-          uppic1(1);
-        }
+        console.log('99999res00000', res)
+        data = data.push(res.data)
+        that.setData({
+          fileUrls: that.data.tempFilePaths.concat(data)
+        })
         console.log("上传返回信息" + data);
       },
       fail: function (res) {
@@ -169,7 +161,10 @@ Page({
   },
 
   pub: function() {
-    this.uppic1(0);
+    let that = this
+    this.data.tempFilePaths.map((item) => {
+      that.uppic1(item)
+    })
     setTimeout(() => {
       let data = {
         openid: this.data.openid,
@@ -182,16 +177,7 @@ Page({
         tempFilePaths: this.data.fileUrls
       };
       console.log("----tempFilePaths----", data.tempFilePaths)
-      // this.data.tempFilePaths.map((item) => {
-      //   wx.uploadFile({
-      //     url: 'https://yangmj.applinzi.com/pubImg',
-      //     filePath: item,
-      //     name: '',
-      //     success: function (res) {
-      //       console.log(111)
-      //     }
-      //   })
-      // })
+      
       wx.request({
         url: `http://${HOST}:3000/users/pub`,
         method: 'post',
