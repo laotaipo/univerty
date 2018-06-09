@@ -75,14 +75,14 @@
   color: #333333;
   position: absolute;
   left: 240px;
-  top: -30px;
+  top: 160px;
 }
 .sort-container .good {
   font-size: 14px;
   color: #333333;
   position: absolute;
-  top: -30px;
-  left: 190px;
+  top: 160px;
+  left: 160px;
 }
 .clearfix:after {
    content:""; 
@@ -100,7 +100,7 @@
   font-size: 14px;
   color: #333333;
   position: absolute;
-  top: -30px;
+  top: 160px;
   right: 10px;
 }
 .sort-container .talk-user {

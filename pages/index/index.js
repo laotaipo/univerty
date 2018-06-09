@@ -3,7 +3,6 @@ const app = getApp()
 let prom = require('../../utils/prom.js')
 let util = require('../../utils/util.js')
 let HOST = require('../../config/config.js').HOST
-HOST = 'localhost'
 console.log(HOST)
 let code, openid, APPID = 'wx1cfc36401256962f', SECRET = '4fa41c4bde9697c0b95531ac12ac2b92'
 Page({
@@ -13,7 +12,9 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     dong: {},
-    newsList: []
+    newsList: [],
+    schoolNo: '',
+    keywords: ''
   },
   bindViewTap: function() {
     wx.navigateTo({
@@ -170,6 +171,9 @@ Page({
             schoolNo: res.data.schoolNo
           },
         })
+        that.setData({
+          schoolNo: res.data.schoolNo
+        })
         that.getNews(res.data.schoolNo)
       }
     })
@@ -204,6 +208,40 @@ Page({
     let id = e.currentTarget.dataset.newsid
     wx.navigateTo({
       url: `../../pages/detail/detail?id=${id}`,
+    })
+  },
+  keywordsInput: function(e) {
+    this.setData({
+      keywords: e.detail.value
+    })
+  },
+  search: function() {
+    let data = {}
+    let that = this
+    data.keywords = this.data.keywords
+    data.schoolNo = this.data.schoolNo
+    wx.request({
+      url: `http://${HOST}:3000/users/search`,
+      method: 'post',
+      header: {
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      data: data,
+      // method: 'POST',
+      success: function (res) {
+        if(res.data.length>0) {
+          that.setData({
+            newsList: res.data
+          })
+        } else {
+          wx.showToast({
+            title: '未查询到',
+            icon: 'fail',
+            duration: 1000,
+            mask: true
+          })
+        }
+      }
     })
   }
 })

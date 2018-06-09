@@ -1,7 +1,7 @@
 // pages/detail/detail.js
 import { getCurrentPageUrlOptions } from "../../utils/util.js"
 let HOST = require('../../config/config.js').HOST
-HOST = 'localhost'
+// HOST = 'localhost'
 Page({
 
   /**
@@ -137,7 +137,7 @@ Page({
       
     }
     wx.request({
-      url: 'http://localhost:3000/users/pubDiscuss',
+      url: `http://${HOST}:3000/users/pubDiscuss`,
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"
@@ -163,8 +163,9 @@ Page({
     data.id = this.data.id
     console.log('====', this.data.good)
     data.good = this.data.good ? true : false
+    console.log("======data", data)
     wx.request({
-      url: 'http://localhost:3000/users/good',
+      url: `http://${HOST}:3000/users/good`,
       method: 'post',
       header: {
         'Content-Type': "application/x-www-form-urlencoded"
@@ -172,11 +173,14 @@ Page({
       data: data,
       // method: 'POST',18697066652
       success: function (res) {
-        // console.log('00000000')
+        console.log('00000000')
         // that.setData({
         //   newsList: res.data
         // })
         // console.log(res.data)
+      },
+      fail: function(res) {
+        console.log('00000========000')
       }
     })
   },

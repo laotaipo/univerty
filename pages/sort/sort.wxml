@@ -4,8 +4,8 @@
   <view class='list'>
     <view wx:for="{{newsList}}" wx:for-item="item" wx:key="id">
       <view class='user-info clearfix'>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-        <!-- <view class='time'>{{item.time}}</view> -->
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{item.headSculpture}}" background-size="cover"></image>
+         <view class='time'>{{item.time}}</view> 
         <view class='name'>{{item.name}}</view>
         <view class='kind'>{{item.tagName}}</view>
         <view class='one-img-container'>

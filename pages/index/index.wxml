@@ -2,12 +2,12 @@
 <view class="index-container">
   <tab class="tab"></tab>
   <view class='search-input-show'>
-    <input class='key-words' type='text' bindinput ="titleInput" placeholder='请输入搜索内容'>
+    <input class='key-words' type='text' bindinput ="keywordsInput" placeholder='请输入搜索内容'>
     </input> 
-    <view class='btn'>确认</view>
+    <view class='btn' bindtap='search'><image src="../../assets/imgs/search-0.png" class='search-img'></image></view>
   </view> 
   <!-- <view class="userinfo"> -->
-      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>   -->
+       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>   
     <!-- <block wx:else> -->
       <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> -->
       <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
@@ -19,7 +19,7 @@
   <view class='list'>
     <view wx:for="{{newsList}}" wx:for-item="item" wx:key="id2">
       <view class='user-info'>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{item.headSculpture}}" background-size="cover"></image>
         <view class='time'>{{item.createTime}}</view>  
         <view class='name'>{{item.name}}</view>
         <view class='kind'>{{item.tagName}}</view>

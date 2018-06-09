@@ -1,7 +1,6 @@
 // pages/pub/pub.js
 import {getCurrentPageUrlOptions} from "../../utils/util.js"
 let HOST = require('../../config/config.js').HOST
-HOST = 'localhost'
 Page({
 
   /**
@@ -182,6 +181,7 @@ Page({
         text: this.data.text,
         tempFilePaths: this.data.fileUrls
       };
+      console.log("----tempFilePaths----", data.tempFilePaths)
       // this.data.tempFilePaths.map((item) => {
       //   wx.uploadFile({
       //     url: 'https://yangmj.applinzi.com/pubImg',
@@ -213,6 +213,6 @@ Page({
           })
         }
       })
-    }, 3000)
+    }, 5000)
   }
 })

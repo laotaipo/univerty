@@ -1,7 +1,6 @@
 // pages/my/my.js
 const app = getApp()
 let HOST = require('../../config/config.js').HOST
-HOST = 'localhost'
 let address = require('./schoolData.js')
 console.log(address)
 Page({
@@ -90,7 +89,7 @@ Page({
       schoolNo: this.data.universityId
     }
     wx.request({
-      url: `http://{HOST}:3000/users/login`,
+      url: `http://${HOST}:3000/users/login`,
       data: data,
       method: 'post',
       header: {
@@ -112,6 +111,9 @@ Page({
           },
         })
         console.log('99999999999999999999999999', res.data)
+      },
+      fail: function(res) {
+        console.log('33333', res.data)
       }
     })
   },

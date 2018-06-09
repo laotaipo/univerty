@@ -1,4 +1,4 @@
-
+let HOST = require('../../config/config.js').HOST
 const app = getApp()
 import { getCurrentPageUrlOptions } from "../../utils/util.js"
 Page({
@@ -35,7 +35,7 @@ Page({
           tag: tag
         }
         wx.request({
-          url: 'http://localhost:3000/users/news',
+          url: `http://${HOST}:3000/users/news`,
           method: 'post',
           header: {
             'Content-Type': "application/x-www-form-urlencoded"
